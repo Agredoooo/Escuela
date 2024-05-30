@@ -16,11 +16,9 @@ use Illuminate\Support\Facades\Route;
 });
 
 
-
 //Route::get('product/listar',[ProductsController::class,'index'])->name("curso.index");
 //Route::get('product/create',[ProductsController::class,'create']);
 //Route::post('product/store', [ProductsController::class,'store'])->name('product.store');
-
 
 
 Route::get('cursos/listar',[CursoController::class,'index'])->name('curso.index');
@@ -33,5 +31,14 @@ Route::get('curso/{curso}/editar',[CursoController::class,'edit'])->name('edit')
 
 
 //consultasElokuent
-//Route::get('consultas',[CursoController::class,'consultasElokuent']);
+Route::get('consultas',[CursoController::class,'consultasElokuent']);
 Route::get('consultas',[ModuleController::class,'consultasElokuent']);
+
+
+Route::get('usuario/asociar_rol',[RoleUserController::class,'asociar']);
+Route::post('usuario/asociar_rol/store',[RoleUserController::class,'store'])->name('role_user.store');
+
+
+//ejercisios laravel 2
+Route::get('camionero',[TruckTruckerController::class,'asociado']);
+Route::post('camionero/store',[TruckTruckerController::class,'store'])->name('truck_trucker.store');
