@@ -1,5 +1,8 @@
 <?php namespace 
-App\Http\Controllers; 
+App\Http\Controllers;
+
+use App\Models\Book;
+use App\Models\User_Example;
 use Illuminate\Support\Facades\Route;
 
  /* 
@@ -42,3 +45,19 @@ Route::post('usuario/asociar_rol/store',[RoleUserController::class,'store'])->na
 //ejercisios laravel 2
 Route::get('camionero',[TruckTruckerController::class,'asociado']);
 Route::post('camionero/store',[TruckTruckerController::class,'store'])->name('truck_trucker.store');
+
+
+//Quiz biblioteca
+Route::get('consultas/quiz',[BookController::class,'Elokuent']);
+//Crud quiz
+Route::get('Quiz/listar', [BookController::class, 'index'])->name('Quiz.index');
+Route::get('create/quiz', [BookController::class, 'create']);
+Route::post('Quiz/store', [BookController::class, 'store'])->name('Quiz.store');
+Route::get('Quiz/{libro}', [BookController::class, 'show'])->name('show');
+Route::put('Quiz/{libro}', [BookController::class, 'update'])->name('update');
+Route::delete('Quiz/{libro}', [BookController::class, 'destroy'])->name('destroy');
+Route::get('Quiz/{libro}/editar', [BookController::class, 'edit'])->name('edit');
+
+//asociar
+Route::get('usuario/asociar_libro', [UserExampleController::class, 'asociar']);
+Route::post('usuario/asociar_libro/store', [UserExampleController::class, 'storse'])->name('Quiz.asocio');

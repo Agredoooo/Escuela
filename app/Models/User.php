@@ -73,4 +73,14 @@ public function posts(){
   public function roles(){
     return $this->belongsToMany('App\Models\Role');
 }
+
+public function use_examples()
+{
+    return $this->hasMany('App\Models\User_Example');
+}
+public function books()
+    {
+        return $this->belongsToMany('App\Models\Book');
+    }
+
 }

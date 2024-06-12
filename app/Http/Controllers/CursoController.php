@@ -18,11 +18,6 @@ public function consultasElokuent(){
 
      $user = User::find(1);
      return $user->posts;
-
-
-
-
-
 }
 
 
@@ -59,7 +54,7 @@ public function show(Curso $curso) {
 }
 public function destroy(Curso $curso) {
     $curso->delete();
-    return redirect()->route('curso.index');
+    return redirect()->route('Quiz.index');
 }
 public function edit (Curso $curso){
 
